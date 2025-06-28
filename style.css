@@ -294,17 +294,17 @@ h1 {
 }
 
 .game-page-container {
-    margin-top: 110px;
+    margin-top: 70px;
 }
 
 @media (max-width: 768px) {
     .game-page-container {
-        margin-top: 85px;
+        margin-top: 60;
     }
 }
 
 @media (max-width: 480px) {
     .game-page-container {
-        margin-top: 70px;
+        margin-top: 50px;
     }
 }
