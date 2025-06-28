@@ -305,6 +305,6 @@ h1 {
 
 @media (max-width: 480px) {
     .game-page-container {
-        margin-top: 2500px;
+        margin-top: 70px;
     }
 }
