@@ -4,10 +4,13 @@ body {
     color: #333;
     margin: 0;
     text-align: center;
-    padding-top: 100px;
+    padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 *, *::before, *::after {
@@ -24,10 +27,15 @@ h1 {
     background: #FFFFFF;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    padding: 30px 5%;
-    width: 90%;
-    max-width: 500px;
-    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 100px auto 50px auto; /* Adjusted to account for top and bottom bars */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu-container p {
@@ -78,7 +86,7 @@ h1 {
 #btn-secreto:hover {
     background-color: #5fb0f5;
     color: #FFF;
-    box-shadow: 0 6px #3b8bce;
+    box-shadow: 0 6px #3b8cce;
 }
 
 #timer {
@@ -89,7 +97,13 @@ h1 {
     display: grid;
     gap: 10px;
     perspective: 1000px;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .card {
@@ -218,6 +232,7 @@ h1 {
     justify-content: center;
     padding: 0 2%;
     z-index: 1000;
+    margin-top: auto;
 }
 
 .barra_texto {
@@ -231,51 +246,36 @@ h1 {
     font-weight: bold;
 }
 
-/* Classes específicas de grid */
+/* Grid classes */
 .cards-12 { grid-template-columns: repeat(4, 1fr); }
 .cards-20 { grid-template-columns: repeat(5, 1fr); }
 .cards-30 { grid-template-columns: repeat(6, 1fr); }
 .cards-60 { grid-template-columns: repeat(10, 1fr); }
 
-/* Responsividade extra */
+/* Responsiveness */
 @media (max-width: 1200px) {
     .cards-60 { grid-template-columns: repeat(8, 1fr); }
+    .container { max-width: 500px; }
 }
 
 @media (max-width: 768px) {
-    body {
-        padding-top: 80px;
-    }
-    .barra_superior {
-        height: 70px;
-    }
-    .barra_centro h1 {
-        font-size: clamp(1rem, 4vw, 1.8rem);
-    }
+    .barra_superior { height: 70px; }
+    .barra_centro h1 { font-size: clamp(1rem, 4vw, 1.8rem); }
     .cards-30 { grid-template-columns: repeat(5, 1fr); }
     .cards-60 { grid-template-columns: repeat(6, 1fr); }
+    .container { padding: 15px; max-width: 400px; }
+    .game-container { gap: 8px; }
 }
 
 @media (max-width: 480px) {
-    body {
-        padding-top: 70px;
-    }
-    .barra_superior {
-        height: 60px;
-    }
-    .barra_left .logo, .barra_right .logo {
-        max-height: 35px;
-        width: 70px;
-    }
-    h1 {
-        font-size: 1.5em;
-        line-height: 1.2;
-    }
-    #timer {
-        font-size: 1.3em;
-    }
+    .barra_superior { height: 60px; }
+    .barra_left .logo, .barra_right .logo { max-height: 35px; width: 70px; }
+    h1 { font-size: 1.5em; line-height: 1.2; }
     .cards-12 { grid-template-columns: repeat(3, 1fr); }
     .cards-20 { grid-template-columns: repeat(4, 1fr); }
     .cards-30 { grid-template-columns: repeat(4, 1fr); }
     .cards-60 { grid-template-columns: repeat(5, 1fr); }
+    .container { padding: 10px; max-width: 300px; }
+    .game-container { gap: 5px; }
+    .card { aspect-ratio: 1 / 1; }
 }
