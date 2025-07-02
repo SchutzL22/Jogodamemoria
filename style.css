@@ -4,7 +4,8 @@ body {
     color: #333;
     margin: 0;
     text-align: center;
-    padding-top: 100px;
+    padding-top: 120px; 
+    padding-bottom: 70px; 
     box-sizing: border-box;
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -28,6 +29,10 @@ h1 {
     width: 90%;
     max-width: 500px;
     margin: 0 auto;
+}
+
+.game-page-container {
+    max-width: 900px;
 }
 
 .menu-container p {
@@ -74,6 +79,8 @@ h1 {
     background-color: #42A5F5;
     color: #42A5F5;
     box-shadow: 0 4px #42A5F5;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 #btn-secreto:hover {
     background-color: #5fb0f5;
@@ -231,20 +238,19 @@ h1 {
     font-weight: bold;
 }
 
-/* Classes específicas de grid */
 .cards-12 { grid-template-columns: repeat(4, 1fr); }
 .cards-20 { grid-template-columns: repeat(5, 1fr); }
 .cards-30 { grid-template-columns: repeat(6, 1fr); }
 .cards-60 { grid-template-columns: repeat(10, 1fr); }
 
-/* Responsividade extra */
 @media (max-width: 1200px) {
     .cards-60 { grid-template-columns: repeat(8, 1fr); }
 }
 
 @media (max-width: 768px) {
     body {
-        padding-top: 80px;
+        padding-top: 90px; 
+        padding-bottom: 60px;
     }
     .barra_superior {
         height: 70px;
@@ -258,7 +264,7 @@ h1 {
 
 @media (max-width: 480px) {
     body {
-        padding-top: 70px;
+        padding-top: 80px; 
     }
     .barra_superior {
         height: 60px;
