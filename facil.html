@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jogo da Memória Divertido</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nível 1 - Animais</title> 
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,23 +13,37 @@
       <img src="Fmplogo.png" class="logo">
     </div>
     <div class="barra_centro">
-      <h1>Jogo da memória</h1>
+      <h1>Animais</h1>
     </div>
     <div class="barra_right">
       <img src="Adslogo.png" class="logo">
     </div>
   </div>
-    <div class="container menu-container">
-        <h1>Jogo da Memória</h1>
-        <p>Escolha um nível para começar a diversão!</p>
-        <div class="menu-buttons">
-            <a href="facil.html" class="btn-menu">Nível 1 - Animais</a>
-            <a href="medio.html" class="btn-menu">Nível 2 - Roblox</a>
-            <a href="dificil.html" class="btn-menu">Nível 3 - Minecraft</a>
-        </div>
+
+    <div class="container game-page-container">
+        <p id="timer">Tempo: 0s</p>
+        
+        <div class="game-container" id="game-board">
+            </div>
+
+        <a href="index.html" class="btn-voltar">Voltar ao Menu</a>
     </div>
-    <br>
-<a href="secreto.html" id="btn-secreto" class="btn-menu">Desafio Secreto</a>
+
+    <script src="script.js"></script>
+    
+<script>
+    const images = [
+        'Fofo_cachorro.png',
+        'Fofo_gato.png',
+        'Fofo_leao.png',
+        'Fofo_papagaio.png',
+        'Fofo_girafa.png',
+        'Fofo_elefante.png'
+    ];
+    document.addEventListener('DOMContentLoaded', () => {
+        initGame(images, 12);
+    });
+</script>
 
   <div class="barra_inferior">
     <div class="barra_texto">
