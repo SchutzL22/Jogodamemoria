@@ -8,8 +8,6 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
     scroll-behavior: smooth;
-
-    /* ALTERAÇÕES PARA STICKY FOOTER */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -34,7 +32,6 @@ h1 {
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
-    /* ALTERADO: Adiciona margem inferior para espaçamento */
     margin-bottom: 40px;
 }
 
@@ -88,7 +85,6 @@ h1 {
     color: #42A5F5;
     box-shadow: 0 4px #42A5F5;
     margin-top: 20px;
-    /* ALTERADO: Adiciona margem inferior para espaçamento */
     margin-bottom: 40px;
 }
 #btn-secreto:hover {
@@ -183,7 +179,6 @@ h1 {
     box-sizing: border-box;
     z-index: 1000;
     flex-wrap: wrap;
-    /* Adicionado para garantir que não encolha no flex container do body */
     flex-shrink: 0; 
 }
 
@@ -232,9 +227,7 @@ h1 {
     justify-content: center;
     padding: 0 2%;
     width: 100%;
-    /* ALTERADO: Pressiona a barra para o fim do contêiner flexível */
     margin-top: auto; 
-    /* Adicionado para garantir que não encolha no flex container do body */
     flex-shrink: 0;
 }
 
