@@ -4,27 +4,30 @@ body {
     color: #333;
     margin: 0;
     text-align: center;
-    padding-bottom: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-top: 100px;
     box-sizing: border-box;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
 h1 {
     color: #4B0082;
     text-shadow: 2px 2px #E0E0E0;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .container {
     background: #FFFFFF;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    padding: 30px;
-    width: 100%;
+    padding: 30px 5%;
+    width: 90%;
     max-width: 500px;
-    margin: 110px auto 0;
-    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .menu-container p {
@@ -51,6 +54,10 @@ h1 {
     box-shadow: 0 4px #DAA520;
     transition: all 0.2s ease;
     border: none;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 .btn-menu:hover, .btn-voltar:hover {
@@ -75,16 +82,14 @@ h1 {
 }
 
 #timer {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #4CAF50;
-    margin-top: 0;
+    display: none;
 }
 
 .game-container {
     display: grid;
     gap: 10px;
     perspective: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
 }
 
 .card {
@@ -149,44 +154,42 @@ h1 {
 }
 
 .barra_superior {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background-color: #4B0082;
-  display: flex;
-  align-items: center;
-  padding: 0 2%;
-  box-sizing: border-box;
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: #4B0082;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+    box-sizing: border-box;
+    z-index: 1000;
+    flex-wrap: wrap;
 }
 
 .barra_left,
 .barra_right {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 .barra_centro {
-  flex: 1 1 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .barra_left {
-  justify-content: flex-start;
-}
-
-.barra_centro {
-  justify-content: center;
+    justify-content: flex-start;
 }
 
 .barra_right {
-  justify-content: flex-end;
+    justify-content: flex-end;
 }
 
 .barra_left .logo, .barra_right .logo {
@@ -196,10 +199,11 @@ h1 {
 }
 
 .barra_centro h1 {
-    font-size: 2.2em;
+    font-size: clamp(1.2rem, 4vw, 2.2rem);
     margin: 0;
     color: #FFFFFF;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    white-space: nowrap;
 }
 
 .barra_inferior {
@@ -217,8 +221,8 @@ h1 {
 }
 
 .barra_texto {
-  text-align: center;
-  color: #FFFFFF;
+    text-align: center;
+    color: #FFFFFF;
 }
 
 .barra_texto a {
@@ -227,30 +231,26 @@ h1 {
     font-weight: bold;
 }
 
+/* Classes específicas de grid */
 .cards-12 { grid-template-columns: repeat(4, 1fr); }
 .cards-20 { grid-template-columns: repeat(5, 1fr); }
 .cards-30 { grid-template-columns: repeat(6, 1fr); }
 .cards-60 { grid-template-columns: repeat(10, 1fr); }
 
+/* Responsividade extra */
 @media (max-width: 1200px) {
     .cards-60 { grid-template-columns: repeat(8, 1fr); }
 }
 
 @media (max-width: 768px) {
     body {
-      padding-top: 80px;
-    }
-    .container {
-        margin-top: 85px;
+        padding-top: 80px;
     }
     .barra_superior {
         height: 70px;
     }
-    .barra_left .logo, .barra_right .logo {
-        height: 45px;
-    }
     .barra_centro h1 {
-        font-size: 1.8em;
+        font-size: clamp(1rem, 4vw, 1.8rem);
     }
     .cards-30 { grid-template-columns: repeat(5, 1fr); }
     .cards-60 { grid-template-columns: repeat(6, 1fr); }
@@ -258,13 +258,7 @@ h1 {
 
 @media (max-width: 480px) {
     body {
-      padding-top: 70px;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-    .container {
-        padding: 20px 15px;
-        margin-top: 70px;
+        padding-top: 70px;
     }
     .barra_superior {
         height: 60px;
@@ -272,13 +266,6 @@ h1 {
     .barra_left .logo, .barra_right .logo {
         max-height: 35px;
         width: 70px;
-    }
-    .barra_centro h1 {
-        font-size: clamp(0.7em, 3.5vw, 1em);
-        white-space: nowrap;
-    }
-    .container {
-        padding: 20px 15px;
     }
     h1 {
         font-size: 1.5em;
@@ -291,20 +278,4 @@ h1 {
     .cards-20 { grid-template-columns: repeat(4, 1fr); }
     .cards-30 { grid-template-columns: repeat(4, 1fr); }
     .cards-60 { grid-template-columns: repeat(5, 1fr); }
-}
-
-.game-page-container {
-    margin-top: 70px;
-}
-
-@media (max-width: 768px) {
-    .game-page-container {
-        margin-top: 60;
-    }
-}
-
-@media (max-width: 480px) {
-    .game-page-container {
-        margin-top: 50px;
-    }
 }
