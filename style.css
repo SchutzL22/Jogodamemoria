@@ -5,10 +5,14 @@ body {
     margin: 0;
     text-align: center;
     padding-top: 120px; 
-    padding-bottom: 70px; 
     box-sizing: border-box;
     overflow-x: hidden;
     scroll-behavior: smooth;
+
+    /* ALTERAÇÕES PARA STICKY FOOTER */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 *, *::before, *::after {
@@ -28,7 +32,10 @@ h1 {
     padding: 30px 5%;
     width: 90%;
     max-width: 500px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    /* ALTERADO: Adiciona margem inferior para espaçamento */
+    margin-bottom: 40px;
 }
 
 .game-page-container {
@@ -62,7 +69,8 @@ h1 {
     white-space: nowrap;
     width: 100%;
     max-width: 300px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-menu:hover, .btn-voltar:hover {
@@ -80,7 +88,8 @@ h1 {
     color: #42A5F5;
     box-shadow: 0 4px #42A5F5;
     margin-top: 20px;
-    margin-bottom: 20px;
+    /* ALTERADO: Adiciona margem inferior para espaçamento */
+    margin-bottom: 40px;
 }
 #btn-secreto:hover {
     background-color: #5fb0f5;
@@ -174,6 +183,8 @@ h1 {
     box-sizing: border-box;
     z-index: 1000;
     flex-wrap: wrap;
+    /* Adicionado para garantir que não encolha no flex container do body */
+    flex-shrink: 0; 
 }
 
 .barra_left,
@@ -214,17 +225,17 @@ h1 {
 }
 
 .barra_inferior {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
     background-color: #4B0082;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 2%;
-    z-index: 1000;
+    width: 100%;
+    /* ALTERADO: Pressiona a barra para o fim do contêiner flexível */
+    margin-top: auto; 
+    /* Adicionado para garantir que não encolha no flex container do body */
+    flex-shrink: 0;
 }
 
 .barra_texto {
@@ -238,19 +249,20 @@ h1 {
     font-weight: bold;
 }
 
+/* Classes específicas de grid */
 .cards-12 { grid-template-columns: repeat(4, 1fr); }
 .cards-20 { grid-template-columns: repeat(5, 1fr); }
 .cards-30 { grid-template-columns: repeat(6, 1fr); }
 .cards-60 { grid-template-columns: repeat(10, 1fr); }
 
+/* Responsividade extra */
 @media (max-width: 1200px) {
     .cards-60 { grid-template-columns: repeat(8, 1fr); }
 }
 
 @media (max-width: 768px) {
     body {
-        padding-top: 90px; 
-        padding-bottom: 60px;
+        padding-top: 90px;
     }
     .barra_superior {
         height: 70px;
